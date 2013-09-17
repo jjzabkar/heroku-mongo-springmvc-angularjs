@@ -1,0 +1,27 @@
+<div class="container">
+
+	<div class="row">
+		<div class="span6">
+			Found {{foos.length}}
+			<tt>Foos</tt>
+			:
+		</div>
+		<div class="span6">
+			<button class="btn btn-primary btn-sm" ng-click="createFoo();">Create new Foo</button>
+		</div>
+	</div>
+
+	<ul class="list-unstyled">
+		<li ng-repeat="foo in foos">
+			<div class="row form-group">
+				<form name="fooForm" ng-controller="FooCtrl" ng-model="foo" ng-init="fooForm.$dirty=false">
+					<button class="btn btn-primary btn-sm" ng-disabled="disableSaveButton"
+						ng-click="updateFoo(foo);disableSaveButton=true;">Save</button>
+					<button class="btn btn-primary btn-sm" ng-click="removeFoo(foo);">Delete</button>
+					<input type="text" class="input-sm" placeholder="Name" ng-model="foo.name" ng-change="disableSaveButton=false" />
+					<a ng-href="foo/{{foo.uuid}}">{{foo.uuid}}</a>
+				</form>
+			</div>
+		</li>
+	</ul>
+</div>
