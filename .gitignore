@@ -1,0 +1,10 @@
+/.externalToolBuilders
+/.settings
+/target
+logs
+bin
+.DS_Store
+.classpath
+.project
+tomcat*
+*log*
