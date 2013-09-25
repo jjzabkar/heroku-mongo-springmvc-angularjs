@@ -53,6 +53,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 		</dependency>
@@ -154,7 +158,6 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>${tomcat-maven-plugin.version}</version>
 				<configuration>
 					<addContextWarDependencies>true</addContextWarDependencies>
 					<addWarDependenciesInClassloader>true</addWarDependenciesInClassloader>
@@ -588,6 +591,11 @@
 				<version>${commons-lang3.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-math3</artifactId>
+				<version>${commons-math3.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpcore</artifactId>
 				<version>${httpclient.version}</version>
@@ -936,6 +944,7 @@
 		<commons-codec.version>1.4</commons-codec.version>
 		<commons-collections.version>3.2.1</commons-collections.version>
 		<commons-lang3.version>3.1</commons-lang3.version>
+		<commons-math3.version>3.2</commons-math3.version>
 		<commons-io.version>2.4</commons-io.version>
 		<cors-filter.version>1.7.1</cors-filter.version>
 		<ehcache.version>2.6.6</ehcache.version>
