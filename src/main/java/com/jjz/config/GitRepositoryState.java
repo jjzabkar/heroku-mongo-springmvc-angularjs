@@ -1,10 +1,12 @@
 package com.jjz.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * From <a href="https://github.com/ktoso/maven-git-commit-id-plugin/tree/master">maven-git-commit-id-plugin</a>.
  */
+@Component
 public class GitRepositoryState {
 
 	@Value("${git.branch}")
