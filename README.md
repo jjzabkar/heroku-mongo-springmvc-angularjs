@@ -11,7 +11,10 @@ Quickstart for a Spring MVC RESTful Angular web app backed by MongoHQ, deployabl
 
 ## Run
 
-Note: Running requires the `MONGOHQ_URL` environment variable to be set.
+Running requires:
+
+* `MONGOHQ_URL` environment variable to be set
+* An internet connection to successfully connect to the <a href="https://www.mongohq.com/home">MongoHQ</a> database.
 
     
 ### Run Via Jetty

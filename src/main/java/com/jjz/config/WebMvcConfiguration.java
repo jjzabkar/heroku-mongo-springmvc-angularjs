@@ -35,14 +35,25 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 		LOGGER.info("init");
 	}
 
+	/**
+	 * Added <tt>favicon.ico</tt> support per <a
+	 * href="http://www.jiwhiz.com/post/2012/10/Add_Favicon_Support_To_Spring_MVC_Application">jiwhiz.com</a>.
+	 * <p/>
+	 * Added JavaScript dependency management support per <a href="http://www.webjars.org/documentation#Spring%20MVC">WebJars Spring MVC
+	 * example</a>.
+	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		String[] staticResourcesLocations = { "/resources/", "classpath:/META-INF/web-resources/" };
 		String[] rootResourceLocation = { "/" };
 
+		registry.addResourceHandler("/resources/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+
 		registry.addResourceHandler("/resources/**").addResourceLocations(staticResourcesLocations);
 		// .setCachePeriod(0); // disable caching
 
+		registry.addResourceHandler("/favicon.ico").addResourceLocations(rootResourceLocation);
+		registry.addResourceHandler("/robots.txt").addResourceLocations(rootResourceLocation);
 		registry.addResourceHandler("/index.*").addResourceLocations(rootResourceLocation);
 
 		registry.addResourceHandler("/docs/**").addResourceLocations("/docs/", "classpath:/META-INF/docs/");
